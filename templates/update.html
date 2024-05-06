@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ {% for x in data_key %}
+<form  method="post">
+    {% csrf_token %}
+    EMPLOYEE NAME:<input type="text" name="employ_name" value="{{x.employ_name}}"><br><br>
+    PHONE NUMBER:<input type="text" name="employ_mobile" value="{{x.employ_mobile}}"><br><br>
+    AGE:<input type="text" name="employ_age" value="{{x.x.employ_age}}"><br><br>
+    DEPARTMENT:<select name="employ_department"><br><br>
+        {% for x in data_key2 %}
+        <option value="{{x.department_name}}">
+                  {{x.department_name}}
+        </option>
+        {% endfor %}
+    </select><br><br>
+
+    <input type="submit" value="submit"><br><br>
+
+</form>
+
+  {% endfor %}
+
+<a href="{% url 'table' %}"><button>Home</button></a>
+
+</body>
+</html>
